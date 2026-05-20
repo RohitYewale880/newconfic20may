@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Itodo } from '../../modal/todo';
+import { todoArr } from '../../consts/todo';
 
 @Component({
   selector: 'app-todo-dashboard',
@@ -8,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class TodoDashboardComponent implements OnInit {
 
   constructor() { }
-
+  todoarr !: Array<Itodo>
   ngOnInit(): void {
+    this.todoarr = todoArr
   }
+  
 
 }

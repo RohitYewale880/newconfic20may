@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Itodo } from '../../modal/todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  @Input() tododata !: Array<Itodo>
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  trackbyfun(index : number, item : Itodo){
+    return item.todoId
   }
 
 }
