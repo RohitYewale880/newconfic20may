@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Itodo } from '../../modal/todo';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GetConfirmComponent } from '../get-confirm/get-confirm.component';
@@ -17,6 +17,7 @@ export class TodoListComponent implements OnInit {
   constructor(private _Dailoge:MatDialog) { }
 
   ngOnInit(): void {
+    
   }
 
   onRemove(id:string){
@@ -28,6 +29,8 @@ export class TodoListComponent implements OnInit {
     close.afterClosed().subscribe((isc: boolean)=>{
       if(isc===true){
         this.removeTodo.emit(id)
+        console.log(id);
+        
       }
     })
   }
@@ -35,3 +38,4 @@ export class TodoListComponent implements OnInit {
   trackbyfun(index : number, item : Itodo){
     return item.todoId
   }
+}

@@ -15,9 +15,10 @@ export class TodoDashboardComponent implements OnInit {
     this.todoarr = todoArr
   }
   
-  remove(removeId:string){
+  removeTodo(removeId:string){
     let getIndex = this.todoarr.findIndex(t =>t.todoId === removeId)
-
+    console.log(getIndex);
+    
     this.todoarr.splice(getIndex,1)
   }
 
