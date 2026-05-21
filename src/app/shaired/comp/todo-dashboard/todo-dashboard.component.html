@@ -3,11 +3,14 @@
         <div class="col-md-6">
             <app-todo-form 
             (emitnewtodo)="ontodonewobj($event)"
+            (emitUpdateTodo)="getUpdateTodo($event)"
+            [getEditobj]="editTodoobj"
             ></app-todo-form>
         </div>
         <div class="col-md-6">
             <app-todo-list 
             [tododata]="todoarr"
+            (emitEditTodo)="getEditTodo($event)"
             (removeTodo)="removeTodo($event)"></app-todo-list>
         </div>
     </div>

@@ -12,6 +12,7 @@ export class TodoListComponent implements OnInit {
 
   
   @Output() removeTodo: EventEmitter<string>=new EventEmitter<string>()
+  @Output() emitEditTodo: EventEmitter<Itodo>=new EventEmitter<Itodo>()
 
   @Input() tododata !: Array<Itodo>
   constructor(private _Dailoge:MatDialog) { }
@@ -19,6 +20,13 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+  onEditTodo(todo:Itodo){
+    console.log(todo);
+    this.emitEditTodo.emit(todo)
+    
+  }
+
 
   onRemove(id:string){
     let config=new MatDialogConfig()
@@ -38,4 +46,5 @@ export class TodoListComponent implements OnInit {
   trackbyfun(index : number, item : Itodo){
     return item.todoId
   }
+  
 }
