@@ -1,1 +1,20 @@
-<p>todo-form works!</p>
+<div class="card">
+    <div class="card-body">
+        <h1 class="text-center" style="color: blue;font-weight: 400;">ADD TODO FORM</h1>
+        <div class="form-group">
+            <label for="todoItem"><strong>TODOITEM*</strong></label>
+            <input type="text" #todoItem name="todoItem" id="" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="IsConfirm"><strong>IsConfirm*</strong></label>
+            <select name="IsConfirm" id="" #isConfirm class="form-control">
+                <option value="true">YES</option>
+                <option value="false">NO</option>
+            </select>
+        </div>
+        <div class="card-footer">
+            <button (click)="addTodoform()" mat-raised-button color="primary" class="form-control">ADD TODO BTN</button>
+            <!-- <button mat-raised-button color="accent" class="form-control">UPDATE TODO BTN</button> -->
+        </div>
+    </div>
+</div>
