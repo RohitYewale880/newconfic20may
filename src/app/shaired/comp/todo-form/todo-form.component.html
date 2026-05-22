@@ -1,5 +1,6 @@
 <div class="card">
     <div class="card-body">
+        <h2>{{isInEditMode ? 'UPDATE TODO':'ADD TODO'}}</h2>
         <h1 class="text-center" style="color: blue;font-weight: 400;">ADD TODO FORM</h1>
         <div class="form-group">
             <label for="todoItem"><strong>TODOITEM*</strong></label>
@@ -13,8 +14,13 @@
             </select>
         </div>
         <div class="card-footer">
-            <button (click)="addTodoform()" mat-raised-button color="primary" class="form-control">ADD TODO BTN</button>
-            <!-- <button mat-raised-button color="accent" class="form-control">UPDATE TODO BTN</button> -->
+            <button 
+            *ngIf="!isInEditMode"
+            (click)="addTodoform()" mat-raised-button color="primary" class="form-control">ADD TODO BTN</button>
+            <button 
+            *ngIf="isInEditMode"
+            (click)="onUpdateTodo()"
+            mat-raised-button color="accent" class="form-control">UPDATE TODO BTN</button>
         </div>
     </div>
 </div>
